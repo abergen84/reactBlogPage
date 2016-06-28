@@ -19698,15 +19698,89 @@ var React = require('react'),
 
 var app = function app() {
 
+	var HomeContainer = React.createClass({
+		displayName: 'HomeContainer',
+
+		render: function render() {
+			return React.createElement('div', { id: 'total-container', __self: this
+			}, React.createElement(Header, {
+				__self: this
+			}), React.createElement(MainDiv, {
+				__self: this
+			}));
+		}
+	});
+
 	var Header = React.createClass({
 		displayName: 'Header',
 
 		render: function render() {
-			return React.createElement('h1', null, 'YOLO');
+			return React.createElement('header', {
+				__self: this
+			}, React.createElement('img', { src: 'http://magentanova.github.io/html-intro-1/images/houston.jpg', __self: this
+			}));
 		}
 	});
 
-	ReactDOM.render(React.createElement(Header, null), document.querySelector('.container'));
+	var MainDiv = React.createClass({
+		displayName: 'MainDiv',
+
+		render: function render() {
+			return React.createElement('div', { id: 'main-container', __self: this
+			}, React.createElement(Logo, {
+				__self: this
+			}), React.createElement(Left, {
+				__self: this
+			}), React.createElement(Right, {
+				__self: this
+			}));
+		}
+	});
+
+	var Left = React.createClass({
+		displayName: 'Left',
+
+		render: function render() {
+			return React.createElement('div', { id: 'left', __self: this
+			}, React.createElement('h2', {
+				__self: this
+			}, 'The Iron Yard Houston'), React.createElement('p', {
+				__self: this
+			}, 'happenings and updates from the iron yard'), React.createElement('p', {
+				__self: this
+			}, 'Search'), React.createElement('input', { type: 'text', placeholder: 'search keywords', __self: this
+			}));
+		}
+	});
+
+	var Logo = React.createClass({
+		displayName: 'Logo',
+
+		render: function render() {
+			return React.createElement('img', { id: 'logo', src: 'http://magentanova.github.io/html-intro-1/images/ironyardlogo.png', __self: this
+			});
+		}
+	});
+
+	var Right = React.createClass({
+		displayName: 'Right',
+
+		render: function render() {
+			return React.createElement('div', { id: 'right', __self: this
+			}, React.createElement('h1', {
+				__self: this
+			}, 'September 22 starts the new class of Iron Yard'), React.createElement('h6', {
+				__self: this
+			}, 'by brian dorton'), React.createElement('img', { src: 'http://magentanova.github.io/html-intro-1/images/classroom.jpg', __self: this
+			}), React.createElement('p', {
+				__self: this
+			}, 'this is a test data dummy default javascript is cool and fun and kinda hard but whatever man it is what it is and its just lovely'));
+		}
+	});
+
+	ReactDOM.render(React.createElement(HomeContainer, {
+		__self: this
+	}), document.querySelector(".container"));
 };
 
 app();
